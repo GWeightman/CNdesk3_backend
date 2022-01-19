@@ -33,6 +33,6 @@ user_schema.methods.generate_authtoken = function () {
     return jwt.sign({_id: this._id}, process.env.SECRET)
 }
 
-const User = mongoose.model("User Info", user_schema)
+const User = mongoose.model("User", user_schema)
 
 module.exports = User
