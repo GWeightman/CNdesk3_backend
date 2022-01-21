@@ -43,3 +43,13 @@ exports.list_job = async (req, res) => {
       res.status(500).send({ message: "Check server logs" });
     }
   };
+
+  exports.list_job = async (req, res) => {
+    try {
+      const job_entry = await Jobs.find();
+      res.status(200).send(job_entry);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({ message: "Check server logs" });
+    }
+  };
