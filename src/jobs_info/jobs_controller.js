@@ -44,7 +44,7 @@ exports.list_job = async (req, res) => {
     }
   };
 
-  exports.list_job = async (req, res) => {
+  exports.list_all = async (req, res) => {
     try {
       const job_entry = await Jobs.find();
       res.status(200).send(job_entry);
