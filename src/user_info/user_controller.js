@@ -60,6 +60,16 @@ exports.token_check = async (req, res) => {
 
 exports.list_all_users = async (req, res) => {
   try {
+    const user_entry = await User.find();
+    res.status(200).send(user_entry);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ message: "Check server logs" });
+  }
+};
+
+exports.list_all_status = async (req, res) => {
+  try {
     const user_entry = await User.find( {status: req.params.status});
     res.status(200).send(user_entry);
   } catch (error) {
