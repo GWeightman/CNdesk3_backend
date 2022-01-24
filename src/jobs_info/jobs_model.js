@@ -21,6 +21,9 @@ const job_schema = new mongoose.Schema({
     job_description: {
         type: String,
         required: true,
+    },
+    dev_name: {
+        type: String
     }
 })
 
