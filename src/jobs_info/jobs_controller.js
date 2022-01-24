@@ -22,7 +22,7 @@ exports.delete_job = async (req, res) => {
 
 exports.list_job = async (req, res) => {
     try {
-      const job_entry = await Jobs.findOne({ clientname: req.params.clientname });
+      const job_entry = await Jobs.find({ clientname: req.params.clientname });
       res.status(200).send(job_entry);
     } catch (error) {
       console.log(error);
