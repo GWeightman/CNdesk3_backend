@@ -60,7 +60,7 @@ exports.token_check = async (req, res) => {
 
 exports.list_all_users = async (req, res) => {
   try {
-    const user_entry = await User.find();
+    const user_entry = await User.find( {status: req.params.status});
     res.status(200).send(user_entry);
   } catch (error) {
     console.log(error);
