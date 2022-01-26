@@ -12,7 +12,7 @@ exports.add_job = async (req, res) => {
 
 exports.delete_job = async (req, res) => {
     try {
-        const job_entry = await Jobs.deleteOne({clientname: req.params.clientname})
+        const job_entry = await Jobs.deleteOne({_id: req.body._id})
         res.status(200).send({ message: "Successfully deleted", job_entry })
     } catch (error) {
         console.log(error)
